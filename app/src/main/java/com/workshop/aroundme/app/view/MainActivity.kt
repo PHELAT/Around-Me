@@ -1,10 +1,11 @@
-package com.workshop.aroundme.app
+package com.workshop.aroundme.app.view
 
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.workshop.aroundme.R
+import com.workshop.aroundme.app.Injector
 import com.workshop.aroundme.app.home.view.HomeFragment
 import com.workshop.aroundme.app.login.view.LoginFragment
 import com.workshop.aroundme.app.starred.view.StarredFragment
