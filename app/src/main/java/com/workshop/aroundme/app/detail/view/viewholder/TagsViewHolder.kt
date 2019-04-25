@@ -1,4 +1,4 @@
-package com.workshop.aroundme.app.detail.viewholder
+package com.workshop.aroundme.app.detail.view.viewholder
 
 import android.view.View
 import android.widget.TextView

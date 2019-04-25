@@ -1,4 +1,4 @@
-package com.workshop.aroundme.app.detail
+package com.workshop.aroundme.app.detail.view
 
 
 import android.os.Bundle
@@ -56,7 +56,9 @@ class DetailFragment : Fragment() {
     private fun onDetailReady(placeDetailEntity: PlaceDetailEntity?) {
         activity?.runOnUiThread {
             placeDetailEntity?.let {
-                recyclerView?.adapter = DetailsAdapter(placeDetailEntity)
+                recyclerView?.adapter = DetailsAdapter(
+                    placeDetailEntity
+                )
                 loading?.visibility = View.GONE
             }
         }

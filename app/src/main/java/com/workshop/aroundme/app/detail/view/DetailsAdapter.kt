@@ -1,13 +1,13 @@
-package com.workshop.aroundme.app.detail
+package com.workshop.aroundme.app.detail.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.workshop.aroundme.R
-import com.workshop.aroundme.app.detail.viewholder.CoverViewHolder
-import com.workshop.aroundme.app.detail.viewholder.LocationViewHolder
-import com.workshop.aroundme.app.detail.viewholder.PlaceInfoViewHolder
-import com.workshop.aroundme.app.detail.viewholder.TagsViewHolder
+import com.workshop.aroundme.app.detail.view.viewholder.CoverViewHolder
+import com.workshop.aroundme.app.detail.view.viewholder.LocationViewHolder
+import com.workshop.aroundme.app.detail.view.viewholder.PlaceInfoViewHolder
+import com.workshop.aroundme.app.detail.view.viewholder.TagsViewHolder
 import com.workshop.aroundme.data.model.PlaceDetailEntity
 
 class DetailsAdapter(private val placeDetailEntity: PlaceDetailEntity) :
