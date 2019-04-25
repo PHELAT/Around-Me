@@ -1,4 +1,4 @@
-package com.workshop.aroundme.app.starred
+package com.workshop.aroundme.app.starred.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

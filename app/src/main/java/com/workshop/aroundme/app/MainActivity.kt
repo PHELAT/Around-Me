@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.workshop.aroundme.R
 import com.workshop.aroundme.app.home.view.HomeFragment
 import com.workshop.aroundme.app.login.view.LoginFragment
-import com.workshop.aroundme.app.starred.StarredFragment
+import com.workshop.aroundme.app.starred.view.StarredFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,7 +36,9 @@ class MainActivity : AppCompatActivity() {
         when (item?.itemId) {
             R.id.starredPlaces -> {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, StarredFragment())
+                    .replace(R.id.content_frame,
+                        StarredFragment()
+                    )
                     .addToBackStack(null)
                     .commit()
             }
