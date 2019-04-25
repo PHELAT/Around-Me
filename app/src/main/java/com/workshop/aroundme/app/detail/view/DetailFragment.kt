@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.workshop.aroundme.R
-import com.workshop.aroundme.app.Injector
+import com.workshop.aroundme.app.di.Injector
 import com.workshop.aroundme.data.model.PlaceDetailEntity
 
 class DetailFragment : Fragment() {

@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.workshop.aroundme.R
-import com.workshop.aroundme.app.Injector
+import com.workshop.aroundme.app.di.Injector
 import com.workshop.aroundme.app.home.view.HomeFragment
 import com.workshop.aroundme.data.model.UserEntity
 

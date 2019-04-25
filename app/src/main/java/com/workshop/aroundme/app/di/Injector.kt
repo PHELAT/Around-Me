@@ -1,4 +1,4 @@
-package com.workshop.aroundme.app
+package com.workshop.aroundme.app.di
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -37,7 +37,9 @@ object Injector {
 
     fun providePlaceRepository(
         context: Context,
-        placeLocalDataSource: PlaceLocalDataSource = providePlaceLocalDataSource(context),
+        placeLocalDataSource: PlaceLocalDataSource = providePlaceLocalDataSource(
+            context
+        ),
         placeRemoteDataSource: PlaceRemoteDataSource = providePlaceRemoteDataSource()
     ): PlaceRepository {
         return PlaceRepository(placeLocalDataSource, placeRemoteDataSource)
@@ -59,14 +61,18 @@ object Injector {
 
     fun provideUserRepository(
         context: Context,
-        userLocalDataSource: UserLocalDataSource = provideUserLocalDataSource(context)
+        userLocalDataSource: UserLocalDataSource = provideUserLocalDataSource(
+            context
+        )
     ): UserRepository {
         return UserRepository(userLocalDataSource)
     }
 
     private fun provideUserLocalDataSource(
         context: Context,
-        defaultSharedPreferences: SharedPreferences = provideDefaultSharedPref(context)
+        defaultSharedPreferences: SharedPreferences = provideDefaultSharedPref(
+            context
+        )
     ): UserLocalDataSource {
         return UserLocalDataSource(defaultSharedPreferences)
     }
