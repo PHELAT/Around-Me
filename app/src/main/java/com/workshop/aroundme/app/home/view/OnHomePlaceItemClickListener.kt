@@ -1,4 +1,4 @@
-package com.workshop.aroundme.app.home
+package com.workshop.aroundme.app.home.view
 
 import com.workshop.aroundme.data.model.PlaceEntity
 

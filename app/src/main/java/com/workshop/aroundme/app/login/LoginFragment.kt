@@ -12,7 +12,7 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.workshop.aroundme.R
 import com.workshop.aroundme.app.Injector
-import com.workshop.aroundme.app.home.HomeFragment
+import com.workshop.aroundme.app.home.view.HomeFragment
 import com.workshop.aroundme.data.model.UserEntity
 
 class LoginFragment : Fragment() {
@@ -42,7 +42,9 @@ class LoginFragment : Fragment() {
                 userRepository.login(user)
 
                 fragmentManager?.beginTransaction()
-                    ?.replace(R.id.content_frame, HomeFragment())
+                    ?.replace(R.id.content_frame,
+                        HomeFragment()
+                    )
                     ?.commit()
             } else {
                 AlertDialog.Builder(view.context)

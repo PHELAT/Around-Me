@@ -1,4 +1,4 @@
-package com.workshop.aroundme.app.home
+package com.workshop.aroundme.app.home.view
 
 import android.view.View
 import android.widget.TextView
