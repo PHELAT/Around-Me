@@ -1,6 +1,5 @@
 package com.workshop.aroundme.app.login.view
 
-
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.DialogInterface
@@ -18,12 +17,10 @@ import com.workshop.aroundme.data.model.UserEntity
 class LoginFragment : Fragment() {
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
-    }
+    ): View = inflater.inflate(R.layout.fragment_login, container, false)
 
     @SuppressLint("ApplySharedPref")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,7 +39,8 @@ class LoginFragment : Fragment() {
                 userRepository.login(user)
 
                 fragmentManager?.beginTransaction()
-                    ?.replace(R.id.content_frame,
+                    ?.replace(
+                        R.id.content_frame,
                         HomeFragment()
                     )
                     ?.commit()
