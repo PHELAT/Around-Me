@@ -1,4 +1,4 @@
-package com.workshop.aroundme.app.login
+package com.workshop.aroundme.app.login.view
 
 
 import android.annotation.SuppressLint
