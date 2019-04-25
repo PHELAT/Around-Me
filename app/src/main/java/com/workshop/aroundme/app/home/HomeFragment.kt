@@ -58,7 +58,7 @@ class HomeFragment : Fragment(), OnHomePlaceItemClickListener {
         }
     }
 
-    override fun onPlaceItemCliced(placeEntity: PlaceEntity) {
+    override fun onPlaceItemClicked(placeEntity: PlaceEntity) {
         fragmentManager?.beginTransaction()
             ?.replace(R.id.content_frame, DetailFragment.newInstance(placeEntity.slug))
             ?.addToBackStack(null)

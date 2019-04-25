@@ -39,7 +39,7 @@ class HomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         }
 
         itemView.setOnClickListener {
-            onHomePlaceItemClickListener.onPlaceItemCliced(placeEntity)
+            onHomePlaceItemClickListener.onPlaceItemClicked(placeEntity)
         }
 
         favorite.setOnClickListener {
