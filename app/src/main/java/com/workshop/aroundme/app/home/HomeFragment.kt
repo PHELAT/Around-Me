@@ -1,4 +1,4 @@
-package com.workshop.aroundme.app.ui.home
+package com.workshop.aroundme.app.home
 
 
 import android.os.Bundle
@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.workshop.aroundme.R
 import com.workshop.aroundme.app.Injector
-import com.workshop.aroundme.app.ui.detail.DetailFragment
+import com.workshop.aroundme.app.detail.DetailFragment
 import com.workshop.aroundme.data.model.ParentCategoryEntity
 import com.workshop.aroundme.data.model.PlaceEntity
 

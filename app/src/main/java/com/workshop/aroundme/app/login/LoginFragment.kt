@@ -1,4 +1,4 @@
-package com.workshop.aroundme.app.ui.login
+package com.workshop.aroundme.app.login
 
 
 import android.annotation.SuppressLint
@@ -12,7 +12,7 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.workshop.aroundme.R
 import com.workshop.aroundme.app.Injector
-import com.workshop.aroundme.app.ui.home.HomeFragment
+import com.workshop.aroundme.app.home.HomeFragment
 import com.workshop.aroundme.data.model.UserEntity
 
 class LoginFragment : Fragment() {

@@ -1,4 +1,4 @@
-package com.workshop.aroundme.app.ui.home
+package com.workshop.aroundme.app.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,4 +1,4 @@
-package com.workshop.aroundme.app.ui.detail
+package com.workshop.aroundme.app.detail
 
 
 import android.os.Bundle

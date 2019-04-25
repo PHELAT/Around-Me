@@ -1,4 +1,4 @@
-package com.workshop.aroundme.app.ui.starred
+package com.workshop.aroundme.app.starred
 
 import android.view.View
 import android.widget.TextView

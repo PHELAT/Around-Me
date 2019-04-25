@@ -5,9 +5,9 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.workshop.aroundme.R
-import com.workshop.aroundme.app.ui.home.HomeFragment
-import com.workshop.aroundme.app.ui.login.LoginFragment
-import com.workshop.aroundme.app.ui.starred.StarredFragment
+import com.workshop.aroundme.app.home.HomeFragment
+import com.workshop.aroundme.app.login.LoginFragment
+import com.workshop.aroundme.app.starred.StarredFragment
 
 class MainActivity : AppCompatActivity() {
 
