@@ -1,20 +1,29 @@
 package com.workshop.aroundme.app.login.view
 
-import android.annotation.SuppressLint
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.workshop.aroundme.R
 import com.workshop.aroundme.app.di.Injector
 import com.workshop.aroundme.app.home.view.HomeFragment
-import com.workshop.aroundme.data.model.UserEntity
+import com.workshop.aroundme.app.login.contract.LoginContract
+import com.workshop.aroundme.app.login.presenter.LoginPresenter
 
-class LoginFragment : Fragment() {
+class LoginFragment : Fragment(), LoginContract.View {
+
+    private val presenter: LoginContract.Presenter by lazy(LazyThreadSafetyMode.NONE) {
+        LoginPresenter(Injector.provideUserRepository(requireContext()))
+    }
+
+    private var messageDialog: AlertDialog? = null
+
+    private lateinit var usernameEditText: EditText
+
+    private lateinit var passwordEditText: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,40 +31,48 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View = inflater.inflate(R.layout.fragment_login, container, false)
 
-    @SuppressLint("ApplySharedPref")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        presenter.onViewReady(this)
 
-        val usernameEditText = view.findViewById<EditText>(R.id.username)
-        val passwordEditText = view.findViewById<EditText>(R.id.password)
+        usernameEditText = view.findViewById(R.id.username)
+        passwordEditText = view.findViewById(R.id.password)
         view.findViewById<View>(R.id.login).setOnClickListener {
-
-            if (usernameEditText.text.isNotEmpty() && usernameEditText.text.toString() == "reza"
-                && passwordEditText.text.isNotEmpty() && passwordEditText.text.toString() == "1234"
-            ) {
-
-                val userRepository = Injector.provideUserRepository(view.context)
-                val user = UserEntity(usernameEditText.text.toString())
-                userRepository.login(user)
-
-                fragmentManager?.beginTransaction()
-                    ?.replace(
-                        R.id.content_frame,
-                        HomeFragment()
-                    )
-                    ?.commit()
-            } else {
-                AlertDialog.Builder(view.context)
-                    .setTitle(getString(R.string.error))
-                    .setMessage(getString(R.string.invalid_user_or_pass))
-                    .setPositiveButton(getString(R.string.ok)) { dialogInterface: DialogInterface, i: Int ->
-                        dialogInterface.dismiss()
-                    }
-                    .create()
-                    .show()
-
-            }
+            presenter.onLoginButtonClicked()
         }
+    }
+
+    override fun getUsernameValue(): String {
+        return usernameEditText.text.toString()
+    }
+
+    override fun getPasswordValue(): String {
+        return passwordEditText.text.toString()
+    }
+
+    override fun goToHomeFragment() {
+        fragmentManager?.beginTransaction()
+            ?.replace(R.id.content_frame, HomeFragment())
+            ?.commit()
+    }
+
+    override fun showDialogMessage(title: Int, message: Int) {
+        AlertDialog.Builder(requireContext())
+            .setTitle(getString(title))
+            .setMessage(getString(message))
+            .setPositiveButton(getString(R.string.ok)) { dialogInterface, _ ->
+                dialogInterface.dismiss()
+            }
+            .create()
+            .apply { messageDialog = this }
+            .show()
+    }
+
+    override fun onDestroyView() {
+        if (messageDialog?.isShowing == true) {
+            messageDialog?.dismiss()
+        }
+        super.onDestroyView()
     }
 
 }
